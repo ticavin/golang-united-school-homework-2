@@ -9,8 +9,13 @@ import "math"
 // CalcSquare(10.0, SidesTriangle)
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
+type SidesNumType int
 
-func CalcSquare(sideLen float64, sidesNum float64) float64 {
+var SidesTriangle SidesNumType = 3
+var SidesSquare SidesNumType = 4
+var SidesCircle SidesNumType = 0
+
+func CalcSquare(sideLen float64, sidesNum SidesNumType) float64 {
 	if sidesNum == 1 {
 		return sideLen
 	} else if sidesNum == 3 {
@@ -20,7 +25,7 @@ func CalcSquare(sideLen float64, sidesNum float64) float64 {
 	} else if sidesNum == 4 {
 		return sideLen * sideLen
 	} else {
-		return sideLen * sideLen
+		return 0
 	}
 
 }
